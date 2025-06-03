@@ -1,0 +1,83 @@
+
+# Recreate the index.html file with enhanced content
+index_html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link in Bio - Dark Theme</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #1c86ee;
+        }
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .icon-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .icon-bar a {
+            margin: 0 10px;
+        }
+        .icon-bar img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body class="fade-in">
+    <div class="container">
+        <div class="icon-bar">
+            <a href="https://www.pinterest.com/max00800/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest">
+            </a>
+        </div>
+        <h1>Explore the best free educational resources:</h1>
+        <a href="https://ocw.mit.edu/" class="button" target="_blank">MIT OpenCourseWare</a>
+        <a href="https://www.khanacademy.org/" class="button" target="_blank">Khan Academy</a>
+        <a href="https://www.coursera.org/" class="button" target="_blank">Coursera - Free Courses</a>
+        <a href="https://www.udacity.com/course/intro-to-statistics--st101" class="button" target="_blank">Udacity - Intro to Statistics</a>
+        <a href="https://www.excel-easy.com/" class="button" target="_blank">Excel Easy</a>
+        <h2>Contact:</h2>
+        <p>Email: <a href="mailto:max00800@inbox.lt" class="button">max00800@inbox.lt</a></p>
+        <p>Pinterest: <a href="https://www.pinterest.com/max00800/" class="button" target="_blank">Pinterest Profile</a></p>
+        <p>Additional resource: <a href="http://www.mat.lt" class="button" target="_blank">www.mat.lt</a></p>
+    </div>
+</body>
+</html>
+"""
+
+# Write the content to index.html
+with open("index.html", "w") as file:
+    file.write(index_html_content)
+
+print("File 'index.html' has been generated successfully.")
+
