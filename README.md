@@ -19,7 +19,7 @@ Welcome to the **Link in Bio** project! This repository contains a stylish and f
 
 ## 🔗 Live Example
 
-[https://max00800.github.io/mat/](https://max00800.github.io/link-in-bio/)
+[https://max00800.github.io/link-in-bio/](https://max00800.github.io/link-in-bio/)
 
 ## 📬 Contact
 
