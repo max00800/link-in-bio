@@ -1,61 +1,68 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
   <meta charset="UTF-8">
-   <meta name="description" content="Mindaugo nuorodų puslapis – edukacija, muzika, tinklaraščiai">
+  <meta name="description" content="Mindaugo nuorodų puslapis – edukacija, muzika, tinklaraščiai">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mindaugo nuorodų puslapis</title>
   <style>
+    /* Pagrindinis stilius */
     body {
       font-family: Verdana, sans-serif;
-      background-color: #000000; /* Black background */
-      color: #ffff33; /* Phosphorescent yellow text */
+      background-color: #000;
+      color: #ffff33;
       margin: 0;
       padding: 20px;
+      line-height: 1.5;
     }
 
     a {
       font-weight: bold;
-      color: #ffff33; /* Phosphorescent yellow text */
+      color: #ffff33;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
     a:hover {
       color: #63b3ed;
       text-decoration: underline;
+      text-shadow: 0 0 8px #63b3ed;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .button {
+    header, main, footer, section, nav {
       display: block;
-      background-color: #222222; /* Dark gray background */
-      color: #ffff33; /* Phosphorescent yellow text */
-      padding: 10px 20px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
+    }
+
+    /* H1 su pulsuojančiu gradientu */
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
       text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
+      background: linear-gradient(90deg, #ffff33, #63b3ed, #21d669);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 6px rgba(255, 255, 51, 0.6),
+                   0 0 10px rgba(99, 179, 237, 0.4),
+                   0 0 12px rgba(33, 214, 105, 0.3);
+      animation: pulseText 3s ease-in-out infinite;
     }
 
-    .button:hover {
-      background-color: #1c86ee;
-    }
-
-    .fade-in {
-      animation: fadeIn 2s;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes pulseText {
+      0%, 100% {
+        text-shadow: 0 0 4px rgba(255, 255, 51, 0.5),
+                     0 0 8px rgba(99, 179, 237, 0.3),
+                     0 0 10px rgba(33, 214, 105, 0.2);
+      }
+      50% {
+        text-shadow: 0 0 10px rgba(255, 255, 51, 0.8),
+                     0 0 15px rgba(99, 179, 237, 0.6),
+                     0 0 18px rgba(33, 214, 105, 0.4);
+      }
     }
 
     .icon-bar {
@@ -68,58 +75,123 @@
       margin: 0 10px;
     }
 
+    /* Pulsuojančios ikonos */
     .icon-bar img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s;
+      filter: drop-shadow(0 0 5px #ffff33)
+              drop-shadow(0 0 8px #63b3ed)
+              drop-shadow(0 0 10px #21d669);
+      animation: pulseIcon 3s ease-in-out infinite;
     }
 
-    /* Bendri mygtukai */
-.button {
-  display: block;
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: bold;
-  color: #fff; /* visi balti tekstai */
-  transition: transform 0.2s, opacity 0.2s;
-}
+    .icon-bar img:hover {
+      transform: scale(1.15);
+    }
 
-.button:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
+    @keyframes pulseIcon {
+      0%, 100% {
+        filter: drop-shadow(0 0 4px #ffff33)
+                drop-shadow(0 0 6px #63b3ed)
+                drop-shadow(0 0 8px #21d669);
+      }
+      50% {
+        filter: drop-shadow(0 0 10px #ffff33)
+                drop-shadow(0 0 14px #63b3ed)
+                drop-shadow(0 0 18px #21d669);
+      }
+    }
 
-/* Kiekvieno tinklo spalvos */
-.button.academia {
-  background-color: #355e3b; /* tamsiai žalia (Academia.edu) */
-}
+    /* Fade-in animacija */
+    .fade-in {
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+    }
 
-.button.wikipedia {
-  background-color: #636466; /* pilka */
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-.button.scribd {
-  background-color: #1a7b71; /* Scribd žalia */
-}
+    /* Mygtukai */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
 
-.button.soundcloud {
-  background-color: #ff5500; /* oranžinė */
-}
+    .button {
+      flex: 1 1 45%;
+      max-width: 250px;
+      display: block;
+      padding: 12px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      transition: transform 0.2s, opacity 0.2s, box-shadow 0.3s;
+      cursor: pointer;
+    }
 
-.button.wordpress {
-  background-color: #21759b; /* mėlyna */
-}
+    .button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+      box-shadow: 0 0 12px rgba(255, 255, 51, 0.7);
+    }
 
-.button.blogger {
-  background-color: #f57d00; /* oranžinė */
-}
+    /* Tinklų spalvos */
+    .button.academia { background-color: #355e3b; }
+    .button.wikipedia { background-color: #636466; }
+    .button.scribd { background-color: #1a7b71; }
+    .button.soundcloud { background-color: #ff5500; }
+    .button.wordpress { background-color: #21759b; }
+    .button.blogger { background-color: #f57d00; }
+    .button.instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); }
 
-.button.instagram {
-  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); /* IG gradientas */
-}
+    /* Responsyvūs iframai */
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-bottom: 20px;
+    }
 
+    .iframe-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border: none;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #ffff33;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    footer a {
+      color: #cccccc;
+      text-decoration: none;
+    }
+
+    @media (max-width: 500px) {
+      .button { flex: 1 1 100%; }
+      header h1 { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body class="fade-in">
@@ -129,59 +201,49 @@
         <img src="images/M_icon.png" alt="M Icon">
       </a>
     </div>
-     <header>
-    <h1>  Max 🌐🔗✨ link website</h1>
 
-  </header>
+    <header>
+      <h1>Max 🌐🔗✨ link website</h1>
+    </header>
 
-   <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/262311635&color=%2321d669&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-     
-   </iframe>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2215190093&color=%23245c99&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/max00800" title="Max" target="_blank" style="color: #cccccc; text-decoration: none;">Max</a> · <a href="https://soundcloud.com/max00800/marija-marija-skaisciausia-lelija" title="Marija, Marija, skaisčiausia lelija" target="_blank" style="color: #cccccc; text-decoration: none;">Marija, Marija, skaisčiausia lelija</a></div>
-      
+    <div class="iframe-container fade-in">
+      <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/262311635&color=%2321d669&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" allow="autoplay"></iframe>
+    </div>
+    <div class="iframe-container fade-in">
+      <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2215190093&color=%23245c99&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" allow="autoplay"></iframe>
+    </div>
 
-  <main>
+    <main>
+      <section aria-label="Kūryba" class="fade-in">
+        <h2>Kūryba: ☁️🎧 garsų debesis, 🎼📁 garsų archyvas, 🌐✍️ WordPressas, 📝🌿 blogas, 📬 ✍️ Substack</h2>
+        <nav>
+          <a class="button soundcloud" href="https://soundcloud.com/max00800" target="_blank" rel="noopener noreferrer">🎵 SoundCloud</a>
+          <a class="button scribd" href="https://www.podbean.com/user-O163XDFa6uz2" target="_blank" rel="noopener noreferrer">🎧 Podbean – įrašų biblioteka</a>
+          <a class="button blogger" href="https://simanskis.blogspot.com/" target="_blank" rel="noopener noreferrer">✨✝️ Jėzus+Marija+Juozapas blogas</a>
+          <a class="button wikipedia" href="https://max00800.blogspot.com/" target="_blank" rel="noopener noreferrer">📚🔎 Bibliotekų duomenų bazė</a>
+          <a class="button instagram" href="https://substack.com/@max00800" target="_blank" rel="noopener noreferrer">📬✍️ Substack</a>
+        </nav>
+      </section>
 
+      <section aria-label="Edukacija" class="fade-in">
+        <h2>Edukacija: 🌐✍️ moksliniai straipsniai, 🔬📖 enciklopedija, 📚 knygos</h2>
+        <nav>
+          <a class="button academia" href="https://independent.academia.edu/mindaugas410" target="_blank" rel="noopener noreferrer">👨‍🎓 Academia</a>
+          <a class="button wordpress" href="https://mingas.wordpress.com/" target="_blank" rel="noopener noreferrer">📚✨ Scientia pro vita</a>
+          <a class="button wikipedia" href="https://lt.wikipedia.org/wiki/Naudotojas:Mindaugas410" target="_blank" rel="noopener noreferrer">📝 Wikipedia</a>
+          <a class="button scribd" href="https://de.scribd.com/user/7555084/Mindaugas" target="_blank" rel="noopener noreferrer">📚 Scribd</a>
+        </nav>
+      </section>
 
-<section>
-  <h1>Kūryba: ☁️🎧 garsų debesis, 🎼📁garsų archyvas, 🌐✍️wordpresas, 📝🌿 blogas, 📬 ✍️ substakas</h1>
-  <nav>
-    
-    <a class="button soundcloud" href="https://soundcloud.com/max00800" target="_blank" rel="noopener noreferrer">🎵 SoundCloud</a>
- <a class="button scribd" href="https://www.podbean.com/user-O163XDFa6uz2" target="_blank" rel="noopener noreferrer">🎧 Podbean.com – įrašų biblioteka user-O163XDFa6uz2</a>
-    <a class="button blogger" href="https://simanskis.blogspot.com/" target="_blank" rel="noopener noreferrer">✨✝️✨ Jėzus+Marija+Juozapas blogspot.com</a>
-    <a class="button wikipedia" href="https://max00800.blogspot.com/" target="_blank" rel="noopener noreferrer">📚🔎 Max00800 blogspot.com – Bibliotekų duomenų bazė</a>
-    <a class="button instagram" href="https://substack.com/@max00800" target="_blank" rel="noopener noreferrer">📬✍️ Substack - straipsnių kūryba @max00800 </a>
-  </nav>
-  
-</section>
-   <section>
-  <h1> Edukacija: 🌐✍️ moksliniai straipsniai, 🔬📖 enciklopedija, 📚 knygos</h1>
-  <nav>
-    <a class="button academia" href="https://independent.academia.edu/mindaugas410" target="_blank" rel="noopener noreferrer">👨‍🎓 Academia</a>
-    <a class="button instagram" href="https://mingas.wordpress.com/" target="_blank" rel="noopener noreferrer">📚✨ Scientia pro vita - mingas.wordPress.com</a>
-    <a class="button wikipedia" href="https://lt.wikipedia.org/wiki/Naudotojas:Mindaugas410" target="_blank" rel="noopener noreferrer">📝 Wikipedia</a>
-    <a class="button scribd" href="https://de.scribd.com/user/7555084/Mindaugas" target="_blank" rel="noopener noreferrer">📚 Scribd</a>
-  </nav>
-</section>
+      <section aria-label="Kontaktai" class="fade-in">
+        <h2>📧 Kontaktai</h2>
+        <p>Rašyti el. paštu: <a href="mailto:max00800@inbox.lt">max00800@inbox.lt</a></p>
+      </section>
+    </main>
 
-    <section>
-      <h1>📧 Contact</h1>
-      <p>You can reach me by email at: <a href="mailto:max00800@inbox.lt">max00800@inbox.lt</a></p>
     <footer>
       <p>© 2026 Max</p>
-  </footer>
-
- 
-   
-
+    </footer>
   </div>
-
-
-
-    
-
-</div>
-
 </body>
 </html>
