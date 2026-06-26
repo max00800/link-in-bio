@@ -23,9 +23,9 @@ Welcome to the **Link in Bio** project! This repository contains a stylish and f
 
 ## 📬 Contact
 
-- Email: [max00800@inbox.lt](mailto:max00800@inbox.lt)
-- Pinterest: [https://www.pinterest.com/max00800/](https://www.pinterest.com/max00800/)
-- Additional resource: [www.mat.lt](http://www.mat.lt)
+- Email: [malda@inbox.lt](mailto:maxmalda@inbox.lt)
+- Pinterest: [https://www.pinterest.com/max00200/](https://www.pinterest.com/max00200/)
+
 
 ## 📄 License
 
