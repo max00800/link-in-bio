@@ -23,8 +23,8 @@ Welcome to the **Link in Bio** project! This repository contains a stylish and f
 
 ## 📬 Contact
 
-- Email: [malda@inbox.lt](mailto:maxmalda@inbox.lt)
-- Pinterest: [https://www.pinterest.com/max00200/](https://www.pinterest.com/max00200/)
+- Email: [max00800@inbox.lt](mailto:max00800@inbox.lt)
+- Pinterest: [https://www.pinterest.com/max00800/](https://www.pinterest.com/max00800/)
 
 
 ## 📄 License
