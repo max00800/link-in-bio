@@ -2,246 +2,577 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Mingo nuorodų puslapis">
+  <meta name="description" content="Mindaugas Šimanskis (@simanskis) – Geopolitikos ir technopolitikos anatomija. Kultūros kritika, istorija ir nemari Katalikų Bažnyčios Tradicija.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mingo nuorodų puslapis</title>
+  <title>@simanskis | Nuorodų puslapis</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Pagrindinis stilius */
-    body {
-      font-family: Verdana, sans-serif;
-      background-color: #FFF;
-      color: #ff5500;
+    :root {
+      --bg-color: #f3f3f1;
+      --card-bg: #ffffff;
+      --text-main: #111111;
+      --text-muted: #555555;
+      --border-color: #e2e2df;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
       line-height: 1.5;
-    }
-
-    a {
-      font-weight: bold;
-      color: #ff5500;
-      text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    a:hover {
-      color: #63b3ed;
-      text-decoration: underline;
-      text-shadow: 0 0 8px #63b3ed;
+      padding: 40px 16px 60px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 680px;
       margin: 0 auto;
     }
 
-    header, main, footer, section, nav {
-      display: block;
-    }
+    /* Profilio antraštė */
 
-    /* H1 su pulsuojančiu gradientu */
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      background: linear-gradient(90deg, #ff5500, #63b3ed, #21d669);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 6px rgba(255, 255, 51, 0.6),
-                   0 0 10px rgba(99, 179, 237, 0.4),
-                   0 0 12px rgba(33, 214, 105, 0.3);
-      animation: pulseText 3s ease-in-out infinite;
+      margin-bottom: 28px;
     }
 
-    @keyframes pulseText {
-      0%, 100% {
-        text-shadow: 0 0 4px rgba(255, 255, 51, 0.5),
-                     0 0 8px rgba(99, 179, 237, 0.3),
-                     0 0 10px rgba(33, 214, 105, 0.2);
-      }
-      50% {
-        text-shadow: 0 0 10px rgba(255, 255, 51, 0.8),
-                     0 0 15px rgba(99, 179, 237, 0.6),
-                     0 0 18px rgba(33, 214, 105, 0.4);
-      }
+    .avatar-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      transition: transform 0.25s ease;
     }
 
-    .icon-bar {
+    .avatar-link:hover {
+      transform: scale(1.04);
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: var(--card-bg);
+      border: 2px solid var(--card-bg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-handle {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-bio {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    /* Socialinės ikonos */
+
+    .social-icons {
       display: flex;
+      gap: 14px;
       justify-content: center;
-      margin-bottom: 20px;
+      align-items: center;
     }
 
-    .icon-bar a {
-      margin: 0 10px;
-    }
-
-    /* Pulsuojančios ikonos */
-    .icon-bar img {
-      width: 50px;
-      height: 50px;
-      transition: transform 0.3s;
-      filter: drop-shadow(0 0 5px #ff5500)
-              drop-shadow(0 0 8px #63b3ed)
-              drop-shadow(0 0 10px #21d669);
-      animation: pulseIcon 3s ease-in-out infinite;
-    }
-
-    .icon-bar img:hover {
-      transform: scale(1.15);
-    }
-
-    @keyframes pulseIcon {
-      0%, 100% {
-        filter: drop-shadow(0 0 4px #ff5500)
-                drop-shadow(0 0 6px #63b3ed)
-                drop-shadow(0 0 8px #21d669);
-      }
-      50% {
-        filter: drop-shadow(0 0 10px #ff5500)
-                drop-shadow(0 0 14px #63b3ed)
-                drop-shadow(0 0 18px #21d669);
-      }
-    }
-
-    /* Fade-in animacija */
-    .fade-in {
-      animation: fadeIn 1.5s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Mygtukai */
-    nav {
+    .social-icon {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 10px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
-    .button {
-      flex: 1 1 45%;
-      max-width: 250px;
+    .social-icon:hover {
+      transform: translateY(-2px);
+      background-color: #fafafa;
+    }
+
+    .social-icon svg {
+      width: 19px;
+      height: 19px;
+      fill: currentColor;
+    }
+
+    /* Skyrių antraštės */
+
+    .section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 28px 0 12px;
+    }
+
+    /* Nuorodų sąrašas */
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: scale(1.015);
+      box-shadow: var(--shadow-hover);
+      border-color: #d0d0cc;
+    }
+
+    .link-card:active {
+      transform: scale(0.99);
+    }
+
+    .link-content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      flex: 1;
+      padding: 0 12px;
+    }
+
+    .link-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .link-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .link-icon-left,
+    .link-icon-right {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .link-icon-left {
+      font-size: 1.1rem;
+    }
+
+    .link-icon-right svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.5;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .link-card:hover .link-icon-right svg {
+      opacity: 1;
+      transform: translateX(2px);
+    }
+
+    /* Garso įrašų kortelė */
+
+    .media-card {
+      background-color: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-top: 12px;
+      padding: 8px;
+    }
+
+    .media-card iframe {
       display: block;
-      padding: 12px 20px;
-      margin: 5px;
+      width: 100%;
       border: none;
       border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      color: #fff;
-      transition: transform 0.2s, opacity 0.2s, box-shadow 0.3s;
-      cursor: pointer;
     }
 
-    .button:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-      box-shadow: 0 0 12px rgba(255, 255, 51, 0.7);
-    }
-
-    /* Tinklų spalvos */
-    .button.academia { background-color: #355e3b; }
-    .button.baltic { background-color:  #a46c3c; }
-    .button.wikipedia { background-color: #636466; }
-    .button.scribd { background-color: #1a7b71; }
-    .button.soundcloud { background-color: #ff5500; }
-    .button.wordpress { background-color: #21759b; }
-    .button.blogger { background-color: #f57d00; }
-    .button.instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); }
-
-    /* Responsyvūs iframai */
-    .iframe-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      margin-bottom: 20px;
-    }
-
-    .iframe-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      border: none;
-    }
-
-    section h2 {
-      font-size: 1.5rem;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      text-shadow: 0 0 8px #ff5500;
-    }
+    /* Puslapio apačia */
 
     footer {
-      margin-top: 40px;
+      margin-top: 44px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #cccccc;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     footer a {
-      color: #cccccc;
+      color: var(--text-main);
+      font-weight: 600;
       text-decoration: none;
     }
 
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pasirodymo animacija */
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobilieji įrenginiai */
+
     @media (max-width: 500px) {
-      .button { flex: 1 1 100%; }
-      header h1 { font-size: 1.5rem; }
+      body {
+        padding: 28px 14px 40px;
+      }
+
+      .link-card {
+        padding: 14px 16px;
+      }
+
+      .link-subtitle {
+        font-size: 0.76rem;
+      }
+
+      .profile-bio {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Sumažintas animacijų režimas */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
-<body class="fade-in">
-  <div class="container">
-    <div class="icon-bar">
-      <a href="https://www.pinterest.com/max00800" target="_blank">
-        <img src="images/M_icon.png" alt="M">
+
+<body>
+  <div class="container fade-in">
+
+    <!-- Profilio antraštė -->
+
+    <header class="profile-header">
+
+      <a href="https://www.pinterest.com/max00800/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="avatar-link"
+         title="Mindaugas – Pinterest">
+
+        <img src="images/M_icon.png" alt="M" class="avatar">
       </a>
-    </div>
- <div class="iframe-container fade-in">
-<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2178810695&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/max00800" title="Mingas" target="_blank" style="color: #cccccc; text-decoration: none;">Mingas</a> · <a href="https://soundcloud.com/max00800/sets/mozartas" title="Mozartas" target="_blank" style="color: #cccccc; text-decoration: none;">Mozartas</a></div>
- </div>
-    <header>
-      <h1> Profiliai</h1>
+
+      <h1 class="profile-handle">@simanskis</h1>
+
+      <p class="profile-bio">
+        Geopolitikos ir technopolitikos anatomija. Kultūros kritika,
+        istorija ir nemari Katalikų Bažnyčios Tradicija.
+      </p>
+
+      <div class="social-icons">
+
+        <!-- El. paštas -->
+
+        <a href="mailto:malda@inbox.lt"
+           class="social-icon"
+           aria-label="El. paštas"
+           title="El. paštas: malda@inbox.lt">
+
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </a>
+
+      </div>
     </header>
 
-     
     <main>
-      <section aria-label="Kūryba" class="fade-in">
-        <h2>  Tinklaraščiai </h2>
-        <nav>
-          <a class="button baltic" href="https://simanskis.substack.com/welcome" target="_blank" rel="noopener noreferrer"> Substack'as</a>
-            <a class="button baltic" href="https://max00800.blogspot.com/" target="_blank" rel="noopener noreferrer">Scientia pro vita</a>
-               <a class="button baltic" href="https://porticus-max.blogspot.com/" target="_blank" rel="noopener noreferrer">Porticus Max'as</a>
-                <a class="button baltic" href="https://simanskis.blogspot.com/" target="_blank" rel="noopener noreferrer">Ave Maria</a>
-              </nav>
-      </section>
 
-      <section aria-label="Edukacija" class="fade-in">
-        <h2>  Archyvas</h2>
-        <nav>
-         <a class="button baltic" href="https://de.scribd.com/user/7555084/Mindaugas" target="_blank" rel="noopener noreferrer">Scribd'as </a>
-          <a class="button baltic" href="https://simanskis.wordpress.com/" target="_blank" rel="noopener noreferrer"> Simanskis Wordpress'as </a>
-           <a class="button baltic" href="https://lt.wikipedia.org/wiki/Naudotojas:Mindaugas410" target="_blank" rel="noopener noreferrer">Laisvoji vikipedijos enciklopedija</a>
-           <a class="button baltic" href="https://www.pinterest.com/max00800/" target="_blank" rel="noopener noreferrer">Pinterest'as</a>
+      <!-- Tinklaraščiai -->
+
+      <section aria-label="Tinklaraščiai">
+
+        <h2 class="section-title">Tinklaraščiai</h2>
+
+        <nav class="links-list">
+
+          <!-- Substack -->
+
+          <a class="link-card"
+             href="https://simanskis.substack.com/welcome"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">✒️</span>
+
+            <div class="link-content">
+              <span class="link-title">Simanskis | Substack</span>
+              <span class="link-subtitle">Pagrindinis naujienlaiškis ir esė</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Scientia pro vita -->
+
+          <a class="link-card"
+             href="https://max00800.blogspot.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">🔬</span>
+
+            <div class="link-content">
+              <span class="link-title">Scientia pro vita</span>
+              <span class="link-subtitle">Mokslo ir idėjų istorija</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Porticus Max -->
+
+          <a class="link-card"
+             href="https://porticus-max.blogspot.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">🏛️</span>
+
+            <div class="link-content">
+              <span class="link-title">Porticus Max</span>
+              <span class="link-subtitle">Lituania Christiana ir Šventasis Raštas</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Ave Maria -->
+
+          <a class="link-card"
+             href="https://simanskis.blogspot.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">✝️</span>
+
+            <div class="link-content">
+              <span class="link-title">Ave Maria</span>
+              <span class="link-subtitle">Grigališkasis choralas, maldos ir tradicija</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
         </nav>
       </section>
 
-      <section aria-label="Kontaktai" class="fade-in">
-        <h2>  Kontaktai  </h2>
-        <p>El.p. adresas: <a href="mailto:malda@inbox.lt">malda@inbox.lt</a></p>
-      </section>
-    </main>
-    
+      <!-- Archyvas -->
 
+      <section aria-label="Archyvas">
+
+        <h2 class="section-title">Archyvas ir platformos</h2>
+
+        <nav class="links-list">
+
+          <!-- WordPress -->
+
+          <a class="link-card"
+             href="https://simanskis.wordpress.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">📰</span>
+
+            <div class="link-content">
+              <span class="link-title">Simanskis WordPress</span>
+              <span class="link-subtitle">Publicistika, knygų apžvalgos ir tyrinėjimai</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Scribd -->
+
+          <a class="link-card"
+             href="https://de.scribd.com/user/7555084/Mindaugas"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">📄</span>
+
+            <div class="link-content">
+              <span class="link-title">Scribd dokumentai</span>
+              <span class="link-subtitle">Leidinių ir tekstų archyvas</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Wikipedia -->
+
+          <a class="link-card"
+             href="https://lt.wikipedia.org/wiki/Naudotojas:Mindaugas410"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">🌐</span>
+
+            <div class="link-content">
+              <span class="link-title">Laisvoji Vikipedijos enciklopedija</span>
+              <span class="link-subtitle">Naudotojo puslapis ir indėlis</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Pinterest -->
+
+          <a class="link-card"
+             href="https://www.pinterest.com/max00800/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <span class="link-icon-left">📌</span>
+
+            <div class="link-content">
+              <span class="link-title">Pinterest (Mindaugas)</span>
+              <span class="link-subtitle">Teminės lentos, formulės ir archyvai</span>
+            </div>
+
+            <span class="link-icon-right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          </a>
+
+        </nav>
+      </section>
+
+      <!-- Muzika -->
+
+      <section aria-label="Muzika">
+
+        <h2 class="section-title">Garso įrašai · Mingas</h2>
+
+        <div class="media-card">
+
+          <iframe
+            width="100%"
+            height="360"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay; encrypted-media"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2178810695&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            title="Mingas – Mozartas, SoundCloud grojaraštis">
+          </iframe>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Puslapio apačia -->
 
     <footer>
-      <p>© 2026</p>
+      <p>
+        Kontaktai:
+        <a href="mailto:mingas@gmx.at">mingas@gmx.at</a>
+      </p>
+
+      <p style="margin-top: 6px;">
+        © 2026 Mindaugas Šimanskis
+      </p>
     </footer>
+
   </div>
 </body>
 </html>
